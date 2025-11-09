@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-// import 'package:intern_task_1/themes/colors.dart';
+import 'package:intern_task_1/screens/main_dashboard/main_dashboard.dart';
+import 'package:intern_task_1/themes/colors.dart';
+import 'package:intern_task_1/themes/font.dart';
+import 'package:intern_task_1/themes/text_styles.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
@@ -15,26 +18,53 @@ class SplashScreen extends StatelessWidget {
             decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage('assets/images/splash.png'),
+
                 fit: BoxFit.cover,
               ),
             ),
           ),
-          Positioned(
-            bottom: 100,
-            left: 20,
-            right: 100,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
-                Text(
-                  'Join the Fitness Club',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 32,
-                    fontWeight: FontWeight.bold,
+
+          Align(
+            alignment: Alignment.bottomLeft,
+            child: Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('Join the Fitness', style: AppTextStyles.splashTitle),
+                  Text('Club', style: AppTextStyles.splashTitle),
+
+                  const SizedBox(height: 5),
+
+                  SizedBox(
+                    width: double.infinity,
+                    child: FilledButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) {
+                              return MainDashboard();
+                            },
+                          ),
+                        );
+                      },
+                      style: FilledButton.styleFrom(
+                        backgroundColor: AppColors.seedColor,
+                        padding: const EdgeInsets.symmetric(vertical: 5),
+                      ),
+                      child: const Text(
+                        'Start Training',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontFamily: AppFonts.primaryFont,
+                        ),
+                      ),
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ],

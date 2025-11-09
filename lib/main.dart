@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:intern_task_1/screens/splash_screen.dart';
+import 'package:intern_task_1/screens/main_dashboard/main_dashboard.dart';
 import 'package:intern_task_1/themes/colors.dart';
 
 void main() {
@@ -19,7 +19,8 @@ class MyApp extends StatelessWidget {
           brightness: Brightness.dark,
         ),
       ),
-      home: const SplashScreen(),
+      // themeMode: ThemeMode.dark,
+      home: const MainDashboard(),
     );
   }
 }
