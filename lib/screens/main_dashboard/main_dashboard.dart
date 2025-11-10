@@ -37,20 +37,6 @@ class _MainDashboardState extends State<MainDashboard> {
             ),
           ),
 
-          // Expanded(
-          //   flex: 7,
-          //   child: Container(
-          //     color: Colors.black,
-          //     child: Container(
-          //       color: Colors.black,
-          //       child: ListView(
-          //         scrollDirection: Axis.horizontal,
-          //         padding: const EdgeInsets.only(bottom: 10.0),
-          //         children: exercisesImages,
-          //       ),
-          //     ),
-          //   ),
-          // ),
           Expanded(
             flex: 7,
             child: Container(

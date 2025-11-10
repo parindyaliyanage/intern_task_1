@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:intern_task_1/screens/main_dashboard/main_dashboard.dart';
-import 'package:intern_task_1/themes/colors.dart';
+import 'package:intern_task_1/screens/splash_screen.dart';
+import 'package:intern_task_1/themes/app_theme.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,14 +13,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: AppColors.seedColor,
-          brightness: Brightness.dark,
-        ),
-      ),
-
-      home: const MainDashboard(),
+      theme: AppTheme.darkTheme,
+      home: const SplashScreen(),
     );
   }
 }
