@@ -24,8 +24,8 @@ class _MainDashboardState extends State<MainDashboard> {
                 alignment: Alignment.topLeft,
                 child: Padding(
                   padding: const EdgeInsets.only(
-                    top: 60.0,
-                    bottom: 2.0,
+                    top: 50.0,
+                    bottom: 10.0,
                     left: 10.0,
                   ),
                   child: Text(
@@ -37,17 +37,28 @@ class _MainDashboardState extends State<MainDashboard> {
             ),
           ),
 
+          // Expanded(
+          //   flex: 7,
+          //   child: Container(
+          //     color: Colors.black,
+          //     child: Container(
+          //       color: Colors.black,
+          //       child: ListView(
+          //         scrollDirection: Axis.horizontal,
+          //         padding: const EdgeInsets.only(bottom: 10.0),
+          //         children: exercisesImages,
+          //       ),
+          //     ),
+          //   ),
+          // ),
           Expanded(
             flex: 7,
             child: Container(
               color: Colors.black,
-              child: Container(
-                color: Colors.black,
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
-                  padding: const EdgeInsets.only(bottom: 10.0),
-                  children: exercisesImages,
-                ),
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                padding: const EdgeInsets.only(bottom: 10.0),
+                children: exercisesImages,
               ),
             ),
           ),
@@ -66,9 +77,9 @@ class _MainDashboardState extends State<MainDashboard> {
           ),
 
           Expanded(
-            flex: 5,
+            flex: 4,
             child: Container(
-              padding: EdgeInsets.only(left: 10.0, bottom: 20.0),
+              padding: EdgeInsets.only(left: 10.0, bottom: 10.0),
               color: Colors.black,
               child: ListView(
                 scrollDirection: Axis.horizontal,
@@ -76,47 +87,17 @@ class _MainDashboardState extends State<MainDashboard> {
               ),
             ),
           ),
+          Expanded(flex: 1, child: Container(color: AppColors.primaryColor)),
 
           Expanded(
-            flex: 14,
+            flex: 13,
             child: Container(
+              padding: EdgeInsets.only(top: 20.0),
               color: Colors.black,
               child: ListView(
-                padding: EdgeInsets.only(top: 20.0),
+                padding: EdgeInsets.symmetric(horizontal: 10.0),
                 scrollDirection: Axis.vertical,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 10.0,
-                      vertical: 20,
-                    ),
-                    child: ClipRRect(
-                      child: Stack(
-                        alignment: Alignment.center,
-                        children: [
-                          Image.asset(
-                            'assets/images/trainer.png',
-                            fit: BoxFit.cover,
-                            width: double.infinity,
-                          ),
-                          Column(
-                            children: [
-                              Text(
-                                "ahdcbsb",
-                                style: AppTextStyles.recomendDashboard,
-                              ),
-                              SizedBox(height: 10),
-                              Text(
-                                'jsdhjdghgdg',
-                                style: AppTextStyles.featuresDashboard,
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ],
+                children: exploreImages,
               ),
             ),
           ),

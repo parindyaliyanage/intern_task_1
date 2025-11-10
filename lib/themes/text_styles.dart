@@ -15,6 +15,12 @@ class AppTextStyles {
     fontFamily: AppFonts.primaryFont,
   );
 
+  static TextStyle exercisesDashboard = TextStyle(
+    fontSize: 10,
+    color: Colors.white,
+    fontFamily: AppFonts.primaryFont,
+  );
+
   static TextStyle recomendDashboard = TextStyle(
     fontSize: 16,
     color: Colors.white,
