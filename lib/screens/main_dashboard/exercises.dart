@@ -1,42 +1,42 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:intern_task_1/themes/colors.dart';
 import 'package:intern_task_1/themes/text_styles.dart';
 
-// final List<Widget> exercisesImages = [
-//   Padding(
-//     padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 1.0),
-//     child: Image.asset('assets/images/cycling.png'),
-//   ),
-//   Padding(
-//     padding: const EdgeInsets.symmetric(horizontal: 10.0),
-//     child: Image.asset('assets/images/pushups.png'),
-//   ),
-//   Padding(
-//     padding: const EdgeInsets.symmetric(horizontal: 10.0),
-//     child: Image.asset('assets/images/cycling.png'),
-//   ),
-// ];
+// exercises imaeg list
 
 final List<Widget> exercisesImages = [
-  Padding(
-    padding: const EdgeInsets.symmetric(vertical: 1.0, horizontal: 10.0),
-    child: Stack(
-      alignment: Alignment.bottomCenter,
-      children: [
-        ClipRRect(
-          child: Image.asset('assets/images/cycling.png', fit: BoxFit.contain),
-        ),
-        FilledButton(
-          onPressed: () {},
-          style: FilledButton.styleFrom(
-            backgroundColor: AppColors.seedColor,
-            padding: const EdgeInsets.symmetric(horizontal: 1, vertical: 5),
-            minimumSize: const Size(91, 8),
+  Builder(
+    builder:
+        (context) => Padding(
+          padding: const EdgeInsets.symmetric(vertical: 1.0, horizontal: 10.0),
+          child: Stack(
+            alignment: Alignment.bottomCenter,
+            children: [
+              ClipRRect(
+                child: Image.asset(
+                  'assets/images/cycling.png',
+                  fit: BoxFit.contain,
+                ),
+              ),
+              FilledButton(
+                onPressed: () {
+                  //! DailyWorkoutPlan
+                  GoRouter.of(context).push('/workout');
+                },
+                style: FilledButton.styleFrom(
+                  backgroundColor: AppColors.seedColor,
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 1,
+                    vertical: 5,
+                  ),
+                  minimumSize: const Size(91, 8),
+                ),
+                child: Text('Start', style: AppTextStyles.exercisesDashboard),
+              ),
+            ],
           ),
-          child: Text('Start', style: AppTextStyles.exercisesDashboard),
         ),
-      ],
-    ),
   ),
   Padding(
     padding: const EdgeInsets.symmetric(vertical: 1.0, horizontal: 10.0),
@@ -79,12 +79,16 @@ final List<Widget> exercisesImages = [
   ),
 ];
 
+//recommend images list
+
 final List<Widget> recomendImages = [
   Image.asset('assets/images/yoga1.png', fit: BoxFit.contain),
   Image.asset('assets/images/running.png', fit: BoxFit.contain),
   Image.asset('assets/images/yoga2.png', fit: BoxFit.contain),
   Image.asset('assets/images/yoga1.png', fit: BoxFit.contain),
 ];
+
+//explore Images list
 
 final List<Widget> exploreImages = [
   Padding(

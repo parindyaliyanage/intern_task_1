@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:intern_task_1/screens/main_dashboard/main_dashboard.dart';
+import 'package:go_router/go_router.dart';
 import 'package:intern_task_1/themes/colors.dart';
 import 'package:intern_task_1/themes/font.dart';
 import 'package:intern_task_1/themes/text_styles.dart';
@@ -41,14 +41,7 @@ class SplashScreen extends StatelessWidget {
                     width: double.infinity,
                     child: FilledButton(
                       onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) {
-                              return MainDashboard();
-                            },
-                          ),
-                        );
+                        context.push('/main-dashboard');
                       },
                       style: FilledButton.styleFrom(
                         backgroundColor: AppColors.seedColor,

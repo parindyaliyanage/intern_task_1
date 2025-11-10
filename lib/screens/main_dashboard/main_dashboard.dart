@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:intern_task_1/providers/user_provider.dart';
 import 'package:intern_task_1/themes/colors.dart';
 import 'package:intern_task_1/themes/text_styles.dart';
 import 'package:intern_task_1/screens/main_dashboard/exercises.dart';
+import 'package:provider/provider.dart';
 
 class MainDashboard extends StatefulWidget {
   const MainDashboard({super.key});
@@ -13,6 +15,7 @@ class MainDashboard extends StatefulWidget {
 class _MainDashboardState extends State<MainDashboard> {
   @override
   Widget build(BuildContext context) {
+    final userProvider = Provider.of<UserProvider>(context);
     return Scaffold(
       body: Column(
         children: [
@@ -29,7 +32,7 @@ class _MainDashboardState extends State<MainDashboard> {
                     left: 10.0,
                   ),
                   child: Text(
-                    "Hello Jenna,\nLet's start exercising",
+                    "Hello ${userProvider.name},\nLet's start exercising",
                     style: AppTextStyles.salutaionDashboard,
                   ),
                 ),
