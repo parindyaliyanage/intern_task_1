@@ -58,4 +58,17 @@ class AppTextStyles {
     color: Colors.black,
     fontFamily: AppFonts.primaryFont,
   );
+
+  //daily progress
+  static TextStyle progressTopic = TextStyle(
+    fontSize: 20,
+    color: Colors.white,
+    fontFamily: AppFonts.primaryFont,
+  );
+
+  static TextStyle progressText2 = TextStyle(
+    fontSize: 12,
+    color: Colors.white54,
+    fontFamily: AppFonts.primaryFont,
+  );
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:intern_task_1/providers/user_provider.dart';
+import 'package:intern_task_1/screens/daily_progress/daily_progress.dart';
 import 'package:intern_task_1/screens/daily_workout_plan/daily_workout_plan_page.dart';
 import 'package:intern_task_1/screens/main_dashboard/main_dashboard.dart';
 import 'package:intern_task_1/screens/splash_screen.dart';
@@ -30,6 +31,10 @@ class MyApp extends StatelessWidget {
           GoRoute(
             path: 'workout',
             builder: (context, state) => const DailyWorkoutPlanPage(),
+          ),
+          GoRoute(
+            path: 'daily-progress',
+            builder: (context, state) => const DailyProgress(),
           ),
         ],
       ),

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:intern_task_1/screens/daily_workout_plan/fullbody_workout.dart';
 import 'package:intern_task_1/themes/colors.dart';
 import 'package:intern_task_1/themes/text_styles.dart';
 
@@ -24,12 +26,32 @@ class _DailyWorkoutPlanPageState extends State<DailyWorkoutPlanPage> {
                   'assets/images/fullbodyWorkout.png',
                   fit: BoxFit.fill,
                 ),
-                Container(
+
+                Positioned(
+                  top: 40,
+                  left: 10,
+                  child: GestureDetector(
+                    onTap: () => Navigator.pop(context),
+                    child: Container(
+                      decoration: BoxDecoration(shape: BoxShape.circle),
+                      padding: const EdgeInsets.all(8.0),
+                      child: const Icon(
+                        Icons.arrow_back_ios,
+                        color: Colors.white,
+                        size: 24,
+                      ),
+                    ),
+                  ),
+                ),
+
+                Align(
                   alignment: Alignment.bottomLeft,
-                  padding: EdgeInsets.only(left: 20.0, bottom: 20.0),
-                  child: Text(
-                    'Full Body Workout',
-                    style: AppTextStyles.fullbodyWorkout,
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 20.0, bottom: 20.0),
+                    child: Text(
+                      'Full Body Workout',
+                      style: AppTextStyles.fullbodyWorkout,
+                    ),
                   ),
                 ),
               ],
@@ -40,52 +62,24 @@ class _DailyWorkoutPlanPageState extends State<DailyWorkoutPlanPage> {
             flex: 1,
             child: Container(
               color: Colors.black,
-              padding: EdgeInsets.symmetric(horizontal: 10.0),
+              padding: const EdgeInsets.symmetric(horizontal: 10.0),
               child: Row(
-                spacing: 8.0,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Expanded(
-                    flex: 1,
-                    child: FilledButton(
-                      onPressed: () {},
-                      style: FilledButton.styleFrom(
-                        backgroundColor: AppColors.buttonColor,
-                        minimumSize: const Size(82, 27),
+                  ...['Cardio', 'Boxing', 'Zumba', 'Hiking'].map(
+                    (label) => Expanded(
+                      flex: 1,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                        child: FilledButton(
+                          onPressed: () {},
+                          style: FilledButton.styleFrom(
+                            backgroundColor: AppColors.buttonColor,
+                            minimumSize: const Size(82, 27),
+                          ),
+                          child: Text(label, style: AppTextStyles.buttons),
+                        ),
                       ),
-                      child: Text('Cardio', style: AppTextStyles.buttons),
-                    ),
-                  ),
-                  Expanded(
-                    flex: 1,
-                    child: FilledButton(
-                      onPressed: () {},
-                      style: FilledButton.styleFrom(
-                        backgroundColor: AppColors.buttonColor,
-                        minimumSize: const Size(82, 27),
-                      ),
-                      child: Text('Boxing', style: AppTextStyles.buttons),
-                    ),
-                  ),
-                  Expanded(
-                    flex: 1,
-                    child: FilledButton(
-                      onPressed: () {},
-                      style: FilledButton.styleFrom(
-                        backgroundColor: AppColors.buttonColor,
-                        minimumSize: const Size(82, 27),
-                      ),
-                      child: Text('Zumba', style: AppTextStyles.buttons),
-                    ),
-                  ),
-                  Expanded(
-                    flex: 1,
-                    child: FilledButton(
-                      onPressed: () {},
-                      style: FilledButton.styleFrom(
-                        backgroundColor: AppColors.buttonColor,
-                        minimumSize: const Size(82, 27),
-                      ),
-                      child: Text('Hiking', style: AppTextStyles.buttons),
                     ),
                   ),
                 ],
@@ -103,7 +97,9 @@ class _DailyWorkoutPlanPageState extends State<DailyWorkoutPlanPage> {
                   backgroundColor: AppColors.seedColor,
                   minimumSize: Size(400, 15),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  GoRouter.of(context).push('/daily-progress');
+                },
                 child: Text(
                   'Start training',
                   style: AppTextStyles.startButtons,
@@ -120,175 +116,7 @@ class _DailyWorkoutPlanPageState extends State<DailyWorkoutPlanPage> {
               color: AppColors.primaryColor,
               child: ListView(
                 padding: EdgeInsets.zero,
-                children: [
-                  //! round 1
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      color: Colors.white,
-                    ),
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 10.0,
-                      vertical: 25.0,
-                    ),
-                    margin: const EdgeInsets.only(bottom: 20),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text('Round 01', style: AppTextStyles.rounds),
-                        const SizedBox(height: 10),
-
-                        //exercise1
-                        Padding(
-                          padding: const EdgeInsets.only(top: 10.0),
-                          child: Row(
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.only(
-                                  left: 10.0,
-                                  right: 20.0,
-                                ),
-                                child: Image.asset('assets/images/rounds.png'),
-                              ),
-                              Expanded(
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: const [
-                                    Text(
-                                      'Side Stretch Left',
-                                      style: TextStyle(color: Colors.black),
-                                    ),
-                                    Text(
-                                      '3×',
-                                      style: TextStyle(color: Colors.black),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Image.asset('assets/images/Vector.png'),
-                            ],
-                          ),
-                        ),
-
-                        //exercise 2
-                        Padding(
-                          padding: const EdgeInsets.only(top: 10.0),
-                          child: Row(
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.only(
-                                  left: 10.0,
-                                  right: 20.0,
-                                ),
-                                child: Image.asset('assets/images/rounds.png'),
-                              ),
-                              Expanded(
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: const [
-                                    Text(
-                                      'Side Stretch Right',
-                                      style: TextStyle(color: Colors.black),
-                                    ),
-                                    Text(
-                                      '3×',
-                                      style: TextStyle(color: Colors.black),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Image.asset('assets/images/Vector.png'),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-
-                  //! round 2
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      color: Colors.white,
-                    ),
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 10.0,
-                      vertical: 25.0,
-                    ),
-                    margin: const EdgeInsets.only(bottom: 20),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text('Round 01', style: AppTextStyles.rounds),
-                        const SizedBox(height: 10),
-
-                        //exercise1
-                        Padding(
-                          padding: const EdgeInsets.only(top: 10.0),
-                          child: Row(
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.only(
-                                  left: 10.0,
-                                  right: 20.0,
-                                ),
-                                child: Image.asset('assets/images/rounds.png'),
-                              ),
-                              Expanded(
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: const [
-                                    Text(
-                                      'Side Stretch Left',
-                                      style: TextStyle(color: Colors.black),
-                                    ),
-                                    Text(
-                                      '3×',
-                                      style: TextStyle(color: Colors.black),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Image.asset('assets/images/Vector.png'),
-                            ],
-                          ),
-                        ),
-
-                        //exercise 2
-                        Padding(
-                          padding: const EdgeInsets.only(top: 10.0),
-                          child: Row(
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.only(
-                                  left: 10.0,
-                                  right: 20.0,
-                                ),
-                                child: Image.asset('assets/images/rounds.png'),
-                              ),
-                              Expanded(
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: const [
-                                    Text(
-                                      'Side Stretch Right',
-                                      style: TextStyle(color: Colors.black),
-                                    ),
-                                    Text(
-                                      '3×',
-                                      style: TextStyle(color: Colors.black),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Image.asset('assets/images/Vector.png'),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
+                children: fullbodyWorkout,
               ),
             ),
           ),
