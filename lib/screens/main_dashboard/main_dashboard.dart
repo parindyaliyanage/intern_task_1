@@ -3,6 +3,7 @@ import 'package:intern_task_1/providers/user_provider.dart';
 import 'package:intern_task_1/themes/colors.dart';
 import 'package:intern_task_1/themes/text_styles.dart';
 import 'package:intern_task_1/screens/main_dashboard/exercises_list.dart';
+import 'package:intern_task_1/widgets/main_dashboard_widgets/start_buttons_widget.dart';
 import 'package:provider/provider.dart';
 
 class MainDashboard extends StatefulWidget {
@@ -47,7 +48,23 @@ class _MainDashboardState extends State<MainDashboard> {
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 padding: const EdgeInsets.only(bottom: 10.0),
-                children: exercisesImages,
+                children: const [
+                  StartButtonsWidget(
+                    imagePath: 'assets/images/cycling.png',
+                    route: '/workout',
+                    buttonColor: AppColors.seedColor,
+                  ),
+                  StartButtonsWidget(
+                    imagePath: 'assets/images/pushups.png',
+                    route: '/workout',
+                    buttonColor: AppColors.buttonColor,
+                  ),
+                  StartButtonsWidget(
+                    imagePath: 'assets/images/cycling.png',
+                    route: '/workout',
+                    buttonColor: AppColors.seedColor,
+                  ),
+                ],
               ),
             ),
           ),
