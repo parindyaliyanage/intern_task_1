@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:intern_task_1/screens/daily_workout_plan/fullbody_workout.dart';
+import 'package:intern_task_1/screens/daily_workout_plan/fullbody_workout_list.dart';
 import 'package:intern_task_1/themes/colors.dart';
 import 'package:intern_task_1/themes/text_styles.dart';
 

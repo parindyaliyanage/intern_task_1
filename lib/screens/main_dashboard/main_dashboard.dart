@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intern_task_1/providers/user_provider.dart';
 import 'package:intern_task_1/themes/colors.dart';
 import 'package:intern_task_1/themes/text_styles.dart';
-import 'package:intern_task_1/screens/main_dashboard/exercises.dart';
+import 'package:intern_task_1/screens/main_dashboard/exercises_list.dart';
 import 'package:provider/provider.dart';
 
 class MainDashboard extends StatefulWidget {

@@ -9,11 +9,11 @@ import 'package:intern_task_1/themes/app_theme.dart';
 import 'package:provider/provider.dart';
 
 void main() {
-  runApp(MyApp()); //*** */
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  MyApp({super.key}); //**romoved const (widget_test.dart)
+  MyApp({super.key});
 
   //go_route
 
